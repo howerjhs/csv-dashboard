@@ -1,0 +1,5 @@
+/target
+/dist
+*.exe
+# 사용자 PC 전용 설정(target-dir 등). CI를 깨므로 커밋하지 않는다.
+.cargo/
