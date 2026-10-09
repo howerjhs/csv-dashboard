@@ -7,7 +7,9 @@
     <meta name="description" content="CSV 파일을 끌어다 놓으면 차트 대시보드를 만들어 주는 웹앱 (파일은 브라우저 밖으로 전송되지 않습니다)" />
 
     <!-- Trunk: Rust 크레이트를 wasm으로 빌드해 링크 -->
-    <link data-trunk rel="rust" data-wasm-opt="z" />
+    <!-- 최신 rustc의 wasm32 기본 기능(bulk memory 등)을 wasm-opt에도 알려준다 -->
+    <link data-trunk rel="rust" data-wasm-opt="z"
+          data-wasm-opt-params="--enable-bulk-memory --enable-nontrapping-float-to-int --enable-sign-ext --enable-mutable-globals --enable-reference-types --enable-multivalue" />
 
     <style>
         html, body {
